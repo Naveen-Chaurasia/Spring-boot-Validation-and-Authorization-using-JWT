@@ -2,6 +2,7 @@ package com.naveen.services;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Objects;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -23,16 +24,18 @@ public class UserDetailImplimentation implements UserDetails {
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 
-		return Collections.singleton(new SimpleGrantedAuthority("ADMIN"));
-//		if(user.getRole()=="admin")
-//		{
+//		System.out.println(user.getRole());
 //		return Collections.singleton(new SimpleGrantedAuthority("ADMIN"));
-//		}
-//		else if (user.getRole()=="user")
-//		{
-//			return Collections.singleton(new SimpleGrantedAuthority("USER"));
-//		}
-//		return null;
+		/*
+		 * if("admin".equalsIgnoreCase(user.getRole())) { return
+		 * Collections.singleton(new SimpleGrantedAuthority("ADMIN")); } else if
+		 * ("user".equalsIgnoreCase(user.getRole())) { return Collections.singleton(new
+		 * SimpleGrantedAuthority("USER")); }
+		 */
+		return Collections.singleton(new SimpleGrantedAuthority(
+				Objects.nonNull(user.getRole())?user.getRole().toUpperCase():""));
+		
+		//return null;
 	}
     
 	
