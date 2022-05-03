@@ -90,7 +90,7 @@ public class ApplicationSecurity extends WebSecurityConfigurerAdapter{
 //	}
 	public void configure(HttpSecurity http) throws Exception {
 		http.csrf().disable()
-		.authorizeRequests().antMatchers("/helloadmin").hasRole("ADMIN")
+		.authorizeRequests().antMatchers("/helloadmin").hasRole("ADMIN","USER")
 		.antMatchers("/hellouser").hasAnyRole("USER","ADMIN")
 		.antMatchers("/authenticate","/adduser","/users","/deleteuser","/updateuser").permitAll().anyRequest().authenticated()
 		//if any exception occurs call this
