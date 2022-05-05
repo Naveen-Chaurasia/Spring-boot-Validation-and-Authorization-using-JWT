@@ -59,6 +59,9 @@ public class AuthentiacationController {
 		System.out.println("userDetails:"+userDetails);
 		final String token = jwtTokenUtil.generateToken(userDetails);
 		System.out.println("token:"+token);
+		System.out.println("+++++++++++++++++++++++++++++");
+		System.out.println("token_VAlues:"+jwtTokenUtil.getAllClaimsFromToken(token));
+		
 		return ResponseEntity.ok(new AuthenticateResponse(token));
 	}
 

@@ -89,6 +89,25 @@ public class ApplicationSecurity extends WebSecurityConfigurerAdapter{
 //		UsernamePasswordAuthenticationFilter.class);
 //	}
 	public void configure(HttpSecurity http) throws Exception {
+		
+		
+//		protected void configure(HttpSecurity http) throws Exception {
+//		      http
+//		         .authorizeRequests()
+//		            .antMatchers("/", "/home").permitAll()
+//		            .anyRequest().authenticated()
+//		            .and()
+//		         .formLogin()
+//		            .loginPage("/login")
+//		            .permitAll()
+//		            .and()
+//		            .logout()
+//		            .permitAll();
+//		   }
+//		
+		
+		
+		
 		http.csrf().disable()
 		.authorizeRequests().antMatchers("/helloadmin").hasRole("ADMIN")
 		.antMatchers("/hellouser").hasAnyRole("USER","ADMIN")
@@ -103,7 +122,7 @@ public class ApplicationSecurity extends WebSecurityConfigurerAdapter{
 
 // 		Add a filter to validate the tokens with every request
 		http.addFilterBefore(customJwtAuthenticationFilter, 
-		UsernamePasswordAuthenticationFilter.class);
+		UsernamePasswordAuthenticationFilter.class); 
 		
 	}
 	}

@@ -55,6 +55,12 @@ public class JwtUtil {
 		}
 		return doGenerateToken(claims, userDetails.getUsername());
 	}
+	//for retrieveing any information from token we will need the secret key
+	public Claims getAllClaimsFromToken(String token) {
+		return Jwts.parser().setSigningKey(secret).parseClaimsJws(token).getBody();
+	}
+	
+	
 
 	private String doGenerateToken(Map<String, Object> claims, String subject) {
 
