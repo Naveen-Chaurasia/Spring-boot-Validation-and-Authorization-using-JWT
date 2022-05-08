@@ -6,7 +6,7 @@ public class AuthenticateResponse {
 	private String token;
 
 	public AuthenticateResponse(String token) {
-		this.token = token;
+		this.token = "http://"+token;
 	}
 
 	public AuthenticateResponse() {
