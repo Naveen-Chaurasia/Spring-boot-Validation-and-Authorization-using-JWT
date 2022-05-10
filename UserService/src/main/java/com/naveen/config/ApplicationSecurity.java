@@ -111,6 +111,7 @@ public class ApplicationSecurity extends WebSecurityConfigurerAdapter{
 		http.csrf().disable()
 		.authorizeRequests().antMatchers("/helloadmin").hasRole("ADMIN")
 		.antMatchers("/hellouser").hasAnyRole("USER","ADMIN")
+		.antMatchers("/swagger-ui.html","/webjars/springfox-swagger-ui/lib/*","/webjars/springfox-swagger-ui/css/*").permitAll()
 		.antMatchers("/authenticate","/adduser","/users","/deleteuser","/updateuser").permitAll().anyRequest().authenticated()
 		//if any exception occurs call this
 		.and().exceptionHandling()
