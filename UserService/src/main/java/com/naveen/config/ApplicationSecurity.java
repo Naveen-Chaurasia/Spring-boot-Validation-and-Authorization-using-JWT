@@ -112,6 +112,10 @@ public class ApplicationSecurity extends WebSecurityConfigurerAdapter{
 		.authorizeRequests().antMatchers("/helloadmin").hasRole("ADMIN")
 		.antMatchers("/hellouser").hasAnyRole("USER","ADMIN")
 		.antMatchers("/swagger-ui.html","/webjars/springfox-swagger-ui/lib/*","/webjars/springfox-swagger-ui/css/*").permitAll()
+		
+		
+		////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		//comment this for getting full access of swagger ui
 		.antMatchers("/authenticate","/adduser","/users","/deleteuser","/updateuser").permitAll().anyRequest().authenticated()
 		//if any exception occurs call this
 		.and().exceptionHandling()
@@ -124,6 +128,7 @@ public class ApplicationSecurity extends WebSecurityConfigurerAdapter{
 // 		Add a filter to validate the tokens with every request
 		http.addFilterBefore(customJwtAuthenticationFilter, 
 		UsernamePasswordAuthenticationFilter.class); 
+		//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		
 	}
 	}
