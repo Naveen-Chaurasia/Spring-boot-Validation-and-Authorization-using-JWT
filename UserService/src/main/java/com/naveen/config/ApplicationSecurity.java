@@ -114,8 +114,8 @@ public class ApplicationSecurity extends WebSecurityConfigurerAdapter{
 		.antMatchers("/swagger-ui.html","/webjars/springfox-swagger-ui/lib/*","/webjars/springfox-swagger-ui/css/*").permitAll()
 		
 		
-		////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-		//comment this for getting full access of swagger ui
+		/////////////////////////////////////////////////////////////////////////////comment this for getting full access of swagger ui 
+		
 		.antMatchers("/authenticate","/adduser","/users","/deleteuser","/updateuser").permitAll().anyRequest().authenticated()
 		//if any exception occurs call this
 		.and().exceptionHandling()
