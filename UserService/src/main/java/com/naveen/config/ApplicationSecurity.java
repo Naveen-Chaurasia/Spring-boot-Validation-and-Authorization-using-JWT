@@ -117,6 +117,7 @@ public class ApplicationSecurity extends WebSecurityConfigurerAdapter{
 		/////////////////////////////////////////////////////////////////////////////comment this for getting full access of swagger ui 
 		
 		.antMatchers("/authenticate","/adduser","/users","/deleteuser","/updateuser").permitAll().anyRequest().authenticated()
+		//.antMatchers("/*").permitAll().anyRequest().authenticated()
 		//if any exception occurs call this
 		.and().exceptionHandling()
         .authenticationEntryPoint(unauthorizedHandler).and().
