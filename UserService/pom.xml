@@ -84,11 +84,7 @@
 			<version>2.12.0</version>
 		</dependency>
 
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<optional>true</optional>
-		</dependency>
+		
 
 		<!-- https://mvnrepository.com/artifact/com.auth0/java-jwt -->
 		<!-- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt -->

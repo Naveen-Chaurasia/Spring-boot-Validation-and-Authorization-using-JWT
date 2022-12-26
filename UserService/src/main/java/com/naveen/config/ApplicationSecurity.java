@@ -122,7 +122,7 @@ public class ApplicationSecurity extends WebSecurityConfigurerAdapter{
 		.and().exceptionHandling()
         .authenticationEntryPoint(unauthorizedHandler).and().
 		// make sure we use stateless session; session won't be used to
-		// store user's state.
+		// store user's state.            https://www.javadevjournal.com/spring-security/spring-security-session/
 		sessionManagement()
 		.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
